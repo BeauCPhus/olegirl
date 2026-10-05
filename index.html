@@ -1,1 +1,146 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>Free Service Manual for the 1982 Chevrolet C 20 3/4 Ton Pickup 2WD V8-350 5.7L VIN M 4-bbl ~ LEMON Manuals</title><link rel="stylesheet" href="style.css"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Repair manual for the 1982 Chevrolet C 20 3/4 Ton Pickup 2WD V8-350 5.7L VIN M 4-bbl, including electrical diagrams, bolt torques, and labor times."></head><body><div class="theme-colors header"><div class="branding"><b>LEMON Manuals</b>: Even more car manuals for everyone: 1960-2025</div><a class="breadcrumb-part" href="404.html">Home</a> &gt;&gt; <a class="breadcrumb-part" href="404.html">Chevrolet</a> &gt;&gt; <a class="breadcrumb-part" href="404.html">1982</a> &gt;&gt; <a class="breadcrumb-part" href="pages/1.html">C 20 3/4 Ton Pickup 2WD V8-350 5.7L VIN M 4-bbl</a></div><div class="main"><h1>Chevrolet: 1982: C 20 3/4 Ton Pickup 2WD V8-350 5.7L VIN M 4-bbl</h1><ul><li><a href='pages/2.html'>Repair and Diagnosis</a><li><a href='pages/3.html'>Parts and Labor</a><li><a href='404.html'>(Download .zip for offline use)</a></ul></div><div class="theme-colors footer"><i>scientia non olet</i> · <a href="about.html">About LEMON Manuals</a></div><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Actions App Reference</title>
+<style>
+:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color-scheme:light dark}
+body{max-width:980px;margin:auto;padding:18px}
+header{position:sticky;top:0;background:Canvas;padding:10px 0 14px;border-bottom:1px solid GrayText;z-index:2}
+h1{font-size:1.4rem;margin:0 0 10px}
+.controls{display:flex;gap:8px;flex-wrap:wrap}
+input{flex:1;min-width:220px;padding:10px;font-size:1rem}
+button{padding:10px 12px}
+#status{font-size:.85rem;opacity:.7;margin-top:8px}
+.action{padding:16px 0;border-bottom:1px solid color-mix(in srgb, CanvasText 15%, transparent)}
+.action h2{font-size:1.08rem;margin:0 0 7px}
+.desc{white-space:pre-wrap;line-height:1.4}
+.meta{font-size:.9rem;margin-top:9px}
+.label{font-weight:650}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em}
+</style>
+</head>
+<body>
+<header>
+<h1>Actions App — Shortcuts Action Reference</h1>
+<div class="controls">
+<input id="q" type="search" placeholder="Search actions, descriptions, parameters…" autofocus>
+<button id="json">Export JSON</button>
+<button id="reload">Reload Source</button>
+</div>
+<div id="status">Loading current Actions reference…</div>
+</header>
+<main>
+<section id="use-cases" style="margin:18px 0 28px;padding:16px;border:1px solid color-mix(in srgb, CanvasText 18%, transparent);border-radius:10px">
+<h2 style="margin-top:0">List &amp; Menu Actions — Functional Use Cases</h2>
+<p>This is a problem-oriented guide to the Actions app features that are most useful when a Shortcut needs to build, inspect, filter, transform, or present a list/menu. Search the catalog below for the bold action names or the quoted search terms.</p>
+
+<h3>Building a menu from changing data</h3>
+<p><strong>Create Menu</strong> / menu-related Actions are useful when the choices should be generated at runtime instead of being permanently typed into Shortcuts' built-in <em>Choose from Menu</em>. Typical sources are Data Jar keys, files in a folder, JSON records, device names, project names, tags, or results returned earlier in the Shortcut.</p>
+<p><strong>Use it when:</strong> the number, names, or order of choices can change. For a fixed handful of choices, Apple's built-in <em>Choose from Menu</em> is usually simpler.</p>
+
+<h3>Presenting a list for the user to choose from</h3>
+<p>Look for <strong>Choose from List</strong>, <strong>Choose from List (Extended)</strong>, and related list-selection Actions. These are useful for turning raw data into an interactive selector, especially where you want richer labels, multiple selection, or behavior beyond the stock Shortcuts picker.</p>
+<p><strong>Examples:</strong> choose one Data Jar child key; pick several files for batch processing; select a vehicle/project from JSON; choose one of the results returned by a search.</p>
+
+<h3>Filtering a list before presenting it</h3>
+<p>Search for list filtering/matching Actions. Use these when you have the full collection already but only want entries meeting a condition.</p>
+<p><strong>Examples:</strong> only keys beginning with <code>shop.</code>; only filenames ending in <code>.json</code>; only records whose status is <code>open</code>; remove blank entries before displaying a menu.</p>
+
+<h3>Finding one item or its position</h3>
+<p>Search the catalog for <strong>index</strong>, <strong>find</strong>, <strong>contains</strong>, and <strong>list</strong>. These Actions answer questions such as “does this item exist?”, “which item matched?”, and “where in the list is it?”</p>
+<p><strong>Useful pattern:</strong> maintain a master list, find the selected item's index, then use that index to retrieve a corresponding value from a second parallel list.</p>
+
+<h3>Getting, removing, or replacing items</h3>
+<p>Search for <strong>Get Item</strong>, <strong>Remove</strong>, <strong>Replace</strong>, and <strong>List</strong>. These are useful when treating a list as a small data structure rather than just something to display.</p>
+<p><strong>Examples:</strong> pop the first queued job; remove a completed task; replace an outdated entry; retrieve the nth element supplied by another calculation.</p>
+
+<h3>Sorting and de-duplicating</h3>
+<p>Search for <strong>Sort</strong>, <strong>Unique</strong>, <strong>Duplicate</strong>, and <strong>List</strong>. These are especially useful before presenting dynamically collected information to a user.</p>
+<p><strong>Examples:</strong> alphabetize Data Jar keys; collapse repeated tags; sort numbers numerically instead of alphabetically; turn messy collected input into a clean menu.</p>
+
+<h3>Chunking / grouping a long list</h3>
+<p>Search for <strong>chunk</strong>, <strong>group</strong>, or <strong>list</strong>. These help divide a large collection into manageable batches.</p>
+<p><strong>Examples:</strong> process 100 records ten at a time; split a long menu into categories; batch API/file operations; paginate results.</p>
+
+<h3>Randomizing or selecting random entries</h3>
+<p>Search for <strong>random</strong> and <strong>list</strong>. Useful for sampling, rotating choices, test data, or selecting an item without maintaining your own random-index logic.</p>
+
+<h3>Converting between text and lists</h3>
+<p>Many Shortcuts workflows cross the boundary between newline-delimited text and actual List values. Search for <strong>split</strong>, <strong>join</strong>, <strong>lines</strong>, and <strong>list</strong>.</p>
+<p><strong>Examples:</strong> turn pasted lines into selectable entries; join selected items for a notification; convert exported keys into one-item-per-line text; parse a simple text file into menu choices.</p>
+
+<h3>Menus as routers</h3>
+<p>A menu does not have to contain the work itself. A useful pattern is <strong>selection → identifier → downstream Shortcut/action</strong>. Keep the menu as the front-end router and let separate Shortcuts perform the jobs.</p>
+<p><strong>Example:</strong> a shop utility menu can return <code>weld_card</code>, <code>databoss</code>, or <code>wire_lookup</code>; a later action uses that returned identifier to route execution. This keeps the visible labels friendly while the internal values stay stable.</p>
+
+<h3>Lists as lightweight lookup tables</h3>
+<p>Two synchronized lists can behave like a primitive key/value table: one list contains display names and the other contains values. Find the chosen display item's index, then retrieve the value at the same index. For anything that grows beyond a small set, a Dictionary/JSON object is generally safer.</p>
+
+<h3>When to use Dictionary/JSON instead</h3>
+<p>Use a List when each element is basically “one thing.” Use a Dictionary/JSON object when each item has several properties such as <code>name</code>, <code>id</code>, <code>location</code>, and <code>status</code>. You can still extract the names into a list for the menu, then use the selection to retrieve the complete record.</p>
+</section>
+<div id="list"></div></main>
+<script>
+const SOURCE='https://gist.githubusercontent.com/sindresorhus/fbba65a774fb9da915e624807a02a6d2/raw/actions.md';
+let actions=[];
+
+function parse(md){
+  const chunks=md.split(/^## /m).slice(1);
+  return chunks.map(chunk=>{
+    const lines=chunk.split('\n');
+    const title=lines.shift().trim();
+    let section='description', desc=[], params=[], returns=[];
+    for(const line of lines){
+      if(/^### Parameters/.test(line)){section='params';continue}
+      if(/^### Returns/.test(line)){section='returns';continue}
+      if(/^### /.test(line)){section='description';continue}
+      if(section==='params' && /^\s*\*\s+/.test(line)) params.push(line.replace(/^\s*\*\s+/,'').replace(/`/g,''));
+      else if(section==='returns' && line.trim() && !/^\s*\*\s*\*\s*\*/.test(line)) returns.push(line.trim().replace(/`/g,''));
+      else if(section==='description' && !/^\s*\*\s*\*\s*\*/.test(line)) desc.push(line);
+    }
+    return {
+      title,
+      description: desc.join('\n').trim().replace(/\n{3,}/g,'\n\n'),
+      parameters: params,
+      returns: returns.join(' ').trim() || null
+    };
+  });
+}
+
+function esc(s=''){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function render(){
+  const q=document.querySelector('#q').value.toLowerCase().trim();
+  const filtered=actions.filter(a=>JSON.stringify(a).toLowerCase().includes(q));
+  document.querySelector('#status').textContent=`${filtered.length} of ${actions.length} actions`;
+  document.querySelector('#list').innerHTML=filtered.map(a=>`
+    <article class="action">
+      <h2>${esc(a.title)}</h2>
+      <div class="desc">${esc(a.description)}</div>
+      ${a.parameters.length?`<div class="meta"><span class="label">Parameters:</span> ${a.parameters.map(x=>`<code>${esc(x)}</code>`).join(' · ')}</div>`:''}
+      ${a.returns?`<div class="meta"><span class="label">Returns:</span> <code>${esc(a.returns)}</code></div>`:''}
+    </article>`).join('');
+}
+async function load(){
+  document.querySelector('#status').textContent='Loading current Actions reference…';
+  try{
+    const r=await fetch(SOURCE,{cache:'no-store'});
+    if(!r.ok) throw new Error(`HTTP ${r.status}`);
+    actions=parse(await r.text());
+    render();
+  }catch(e){
+    document.querySelector('#status').textContent='Could not load source: '+e.message;
+  }
+}
+document.querySelector('#q').addEventListener('input',render);
+document.querySelector('#reload').addEventListener('click',load);
+document.querySelector('#json').addEventListener('click',()=>{
+  const blob=new Blob([JSON.stringify({source:SOURCE,generated:new Date().toISOString(),actions},null,2)],{type:'application/json'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='actions-app-reference.json'; a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+});
+load();
+</script>
+</body>
+</html>
